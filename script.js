@@ -1,3 +1,14 @@
+window.addEventListener("scroll", function() {
+  var header = document.querySelector("header");
+  if (window.scrollY === 0) {
+    header.style.transform = "scale(1)";
+  } else {
+    header.style.transform = "scale(0.9)";
+  }
+});
+
+
+
 window.addEventListener('DOMContentLoaded', function() {
   const slides = document.querySelectorAll('.slide');
   const captions = document.querySelectorAll('.slide-caption');

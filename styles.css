@@ -8,7 +8,13 @@ body {
 /* Header Styles */
 header {
   background-color: #fff;
-  padding: 10px 100px;
+  padding: 10px 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: transform 0.3s ease;
 }
 
 .header-container {
@@ -17,6 +23,10 @@ header {
   justify-content: space-between;
   padding: 20px;
   flex-wrap: wrap;
+  max-width: 1200px; /* Adjust the value based on your desired maximum width */
+  margin: 0 auto; /* Center the header horizontally */
+  position: relative;
+  z-index: 1;
 }
 
 .logo {
@@ -62,10 +72,10 @@ nav ul li:last-child {
 
 nav ul li a {
   text-decoration: none;
-  color: #AF8B09;
+  color: #1D7DBE;
   position: relative;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 nav ul li a:hover {
@@ -112,7 +122,8 @@ nav ul li a:hover::before {
   .header-container {
     flex-direction: column;
     align-items: center;
-    padding: 20px 10px;
+    padding: 10px 5px;
+    flex-wrap: wrap;
   }
 
   nav {
@@ -121,6 +132,11 @@ nav ul li a:hover::before {
   }
 
   nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -128,7 +144,47 @@ nav ul li a:hover::before {
     margin-right: 10px;
     margin-bottom: 10px;
   }
+
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #AF8B09;
+    position: relative;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  nav ul li a:hover {
+    color: #AF8B09;
+    font-weight: bold;
+  }
+
+  nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1D7DBE;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  nav ul li a:hover::before {
+    transform: scaleX(1);
+  }
+
+  .cta-button {
+    flex: 0 0 auto;
+    margin-top: 10px;
+  }
 }
+
 
 
 
@@ -137,6 +193,7 @@ nav ul li a:hover::before {
   position: relative;
   width: 100%;
   height: 500px;
+  padding-top: 100px;
 }
 
 .slideshow {
@@ -276,11 +333,11 @@ nav ul li a:hover::before {
   }
 }
 
-
-/* Media Query for Mobile */
+/* Media Query for Hero Mobile */
 @media (max-width: 768px) {
   #hero {
-    height: 300px;
+    height: 300px; /* Adjust the height based on your header's height */
+    margin-top: 100px; /* Adjust the margin-top value to create space below the header */
   }
   
   .slide-3-caption {
@@ -303,7 +360,7 @@ nav ul li a:hover::before {
 
 /* About Section */
 .about {
-  padding: 60px 100px;
+  padding: 50px 100px;
   background-color: #ffffff;
   text-align: center;
 }
@@ -315,6 +372,7 @@ nav ul li a:hover::before {
 }
 
 .about-image img {
+  display: none;
   max-width: 400px;
   height: auto;
   animation: scaleIn 1.5s ease-in-out;
@@ -334,12 +392,12 @@ nav ul li a:hover::before {
   padding: 50px;
   background-color: #fcf8e9;
   border-radius: 6px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.329);
   animation: bounceIn 1s ease-in-out;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  line-height: 1.6;
+  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -366,7 +424,7 @@ nav ul li a:hover::before {
 }
 
 .inscription-text h1 {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
   position: relative;
 }
@@ -374,13 +432,13 @@ nav ul li a:hover::before {
 .inscription-text h1::before {
   content: "";
   position: absolute;
-  top: -5px; /* Adjust the distance of the line from the top */
+  top: -20px; /* Adjust the distance of the line from the top */
   left: 0;
   width: 100%;
   height: 2px;
   background-color: #AF8B09; /* Customize the color of the line */
   transform: scaleX(0); /* Initially hide the line */
-  transition: transform 0.3s ease; /* Add a smooth transition effect */
+  transition: transform 0.5s ease; /* Add a smooth transition effect */
 }
 
 .inscription-text h1:hover::before {
@@ -390,7 +448,7 @@ nav ul li a:hover::before {
 
 
 .inscription-text h2 {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 
@@ -508,7 +566,7 @@ nav ul li a:hover::before {
 .additional-info-item i {
   font-size: 32px;
   color: #AF8B09;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .additional-info-item h3 {
@@ -521,7 +579,8 @@ nav ul li a:hover::before {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  line-height: 1.5;
+  line-height: 1;
+  color: #2b2a2a;
 }
 
 
@@ -540,9 +599,9 @@ nav ul li a:hover::before {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
-  background-color: #1D7DBE;
-  padding: 50px;
-  color: #ffffff;
+  background-color: #ffffff;
+  padding: 20px;
+  color: #1D7DBE;
   border: 2px solid #AF8B09;
 }
 
@@ -582,11 +641,11 @@ nav ul li a:hover::before {
   line-height: 1.2;
   margin: 0;
   text-align: left;
-  color: #202020;
+  color: #2b2a2a;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  line-height: 1.5;
+  line-height: 1;
 }
 
 
@@ -684,11 +743,11 @@ nav ul li a:hover::before {
 
 @media (max-width: 768px) {
   .about {
-    padding: 40px 20px;
+    padding: 20px 20px;
   }
 
   .about-image img {
-    max-width: 100%;
+    display: none;
   }
 
   .about-inscription {
@@ -706,6 +765,38 @@ nav ul li a:hover::before {
 
   .inscription-image img {
     max-width: 100%;
+    height: 400px;
+  }
+
+  .inscription-text h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .inscription-text h2 {
+    font-size: 12px;
+  }
+  
+  .inscription-text p {
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: normal;
+  }
+
+  .additional-info-item p {
+    font-size: 12px;
+    margin-bottom: 5px;
+    line-height: normal;
+  }
+
+  .additional-info-item h3 {
+    font-size: 16px;
+    margin-top: 5px;
+    
+  }
+
+  .additional-info-item i {
+    margin-bottom: 5px;
   }
 
   .about-content {
@@ -718,19 +809,49 @@ nav ul li a:hover::before {
   }
 
   .additional-info-item {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+  }
+
+  .offer h1 {
+    padding: 10px;
+    font-size: 18px;
+  }
+  
+  .offer-item img{
+    width: 100%;
+    height: 150px;
+  }
+
+  .offer-item h2{
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #074c7a;
+  }
+
+  .offer-item p {
+    font-size: 12px;
+    margin-bottom: 20px;
+    line-height: normal;
+    color: #141313;
   }
 
   .offer-item {
     flex-basis: 100%;
     margin: 0;
   }
+
+  .company-stats {
+    margin: 0; /* Adjust the margin value for spacing between items */
+   width: 100%;
+    
+  }
+
 }
 
 
 /* Footer style */
 .footer {
-  background-image: linear-gradient(rgba(3, 10, 75, 0.719), rgba(0, 0, 0, 0.836));
+  background-image: linear-gradient(rgba(4, 16, 124, 0.719), rgba(0, 0, 0, 0.918));
   background-size: cover;
   background-position: center;
   padding: 40px 0;
