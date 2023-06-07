@@ -650,6 +650,75 @@ nav ul li a:hover::before {
   line-height: 1;
 }
 
+.features {
+  background-color: #f7f7f7;
+  padding: 50px 0;
+  margin-top: 50px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.feature {
+  text-align: center;
+  margin: 0 60px;
+  max-width: 300px;
+  animation: bounce-in 0.8s ease-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature i {
+  font-size: 48px;
+  color: #1D7DBE;
+  margin-bottom: 20px;
+}
+
+.feature h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #AF8B09;
+}
+
+
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .feature {
+    margin: 10px;
+    max-width: 300px;
+  }
+
+  .features {
+    margin: 0;
+    
+  }
+}
+
+
+
 
 
 .company-stats {
@@ -690,6 +759,7 @@ nav ul li a:hover::before {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #1D7DBE;
 }
 
 .stat-item span {
