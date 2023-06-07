@@ -355,6 +355,7 @@ nav ul li a:hover::before {
   
   .slide-caption p {
     font-size: 14px;
+    
   }
 }
 
@@ -513,10 +514,7 @@ nav ul li a:hover::before {
   }
 }
 
-.about-inscription:hover {
-  /*transform: translateY(-2px);*/
- /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);*/
-}
+
 
 
 
@@ -706,6 +704,7 @@ nav ul li a:hover::before {
   .container {
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 20px;
   }
 
   .feature {
@@ -715,7 +714,7 @@ nav ul li a:hover::before {
 
   .features {
     margin: 0;
-    
+    padding: 2px 0;
   }
 }
 
@@ -818,6 +817,7 @@ nav ul li a:hover::before {
 @media (max-width: 768px) {
   .about {
     padding: 20px 20px;
+    margin: 0 20px;
   }
 
   .about-image img {
@@ -875,6 +875,7 @@ nav ul li a:hover::before {
 
   .about-content {
     align-items: flex-start;
+    
   }
 
   .additional-info {
@@ -884,6 +885,8 @@ nav ul li a:hover::before {
 
   .additional-info-item {
     margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .offer h1 {
@@ -893,7 +896,7 @@ nav ul li a:hover::before {
   
   .offer-item img{
     width: 100%;
-    height: 150px;
+    height: 200px;
   }
 
   .offer-item h2{
@@ -911,7 +914,7 @@ nav ul li a:hover::before {
 
   .offer-item {
     flex-basis: 100%;
-    margin: 0;
+    margin: 0 20px;
   }
 
   .company-stats {
@@ -1034,20 +1037,26 @@ nav ul li a:hover::before {
 }
 
 @media (max-width: 767px) {
+ 
+  .footer-container{
+    align-items: center;
+  }
+ 
   /* Footer Logo */
   .footer-logo img {
-    width: 120px;
+    width: 150px;
   }
 
   /* Address Sections */
   .address-sections {
     flex-direction: column;
+    
   }
 
   .address {
     width: 100%;
     margin: 10px 0;
-  }
+    
 
   /* Footer CTA Section */
   .footer-cta-section {
