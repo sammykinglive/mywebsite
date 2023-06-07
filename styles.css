@@ -367,6 +367,8 @@ nav ul li a:hover::before {
   text-align: center;
 }
 
+
+
 .about-content {
   display: flex;
   flex-direction: column;
@@ -521,7 +523,7 @@ nav ul li a:hover::before {
 .additional-info {
   margin-top: 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
 }
 
@@ -639,19 +641,19 @@ nav ul li a:hover::before {
 }
 
 .offer-item p {
-  font-size: 16px;
-  line-height: 1.2;
+  font-size: 14px;
+  line-height: 1;
   margin: 0;
   text-align: left;
   color: #2b2a2a;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  line-height: 1;
+  
 }
 
 .features {
-  background-color: #f7f7f7;
+  background-color: #fcf8e9;
   padding: 50px 0;
   margin-top: 50px;
 }
@@ -920,16 +922,18 @@ nav ul li a:hover::before {
 
 }
 
-
-/* Footer style */
-.footer {
-  background-image: linear-gradient(rgba(4, 16, 124, 0.719), rgba(0, 0, 0, 0.918));
-  background-size: cover;
-  background-position: center;
-  padding: 40px 0;
+/* Footer Container */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 100px;
+  background-image: linear-gradient(rgba(3, 10, 75, 0.719), rgba(0, 0, 0, 0.836));
   opacity: 0;
   transform: translateY(20px);
-  animation: bounce-in 1s ease-out forwards;
+  animation: bounce-in 0.8s forwards;
 }
 
 @keyframes bounce-in {
@@ -943,89 +947,110 @@ nav ul li a:hover::before {
   }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Footer Logo */
+.footer-logo img {
+  width: 150px;
+  padding: 20px;
 }
 
-.footer-logo {
-  text-align: center;
+/* Address Sections */
+.address-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
-.footer-logo img {
-  max-width: 150px;
-}
-
-.address-sections {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
 .address {
-  flex-basis: calc(33.33% - 20px);
-  text-align: center;
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+}
+
+.address:hover {
+  transform: translateY(-3px);
 }
 
 .address h4 {
-  font-size: 16px;
-  font-weight: bold;
   margin-bottom: 10px;
 }
 
-.address p {
-  color: #fff;
-  margin-bottom: 5px;
-}
-
-.address i {
-  margin-right: 5px;
-}
-
+/* Footer CTA Section */
 .footer-cta-section {
-  text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .footer-cta-section h3 {
-  font-size: 24px;
   margin-bottom: 10px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer-cta-section p {
-  color: #fff;
+  margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .footer-cta-button {
   display: inline-block;
-  padding: 18px 36px;
+  padding: 16px 30px;
   background-color: #ffffff;
-  color: #AF8B09;
-  font-size: 16px;
+  color: #1D7DBE;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .footer-cta-button:hover {
-  background-color: #ffffff;
-  font-size: large;
-  font-weight: 500;
-  color: #1D7DBE;
-}
-
-.footer p {
-  text-align: center;
+  background-color: #1D7DBE;
   color: #fff;
 }
 
+/* Copyright Section */
+.footer-container {
+  position: relative;
+}
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  .footer {
-    height: auto;
-    padding: 20px 0;
+.footer-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  transform: translateX(-50%);
+}
+
+.footer-container .copyright {
+  margin-top: 20px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+@media (max-width: 767px) {
+  /* Footer Logo */
+  .footer-logo img {
+    width: 120px;
+  }
+
+  /* Address Sections */
+  .address-sections {
+    flex-direction: column;
+  }
+
+  .address {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Footer CTA Section */
+  .footer-cta-section {
+    text-align: center;
   }
 }
