@@ -1,3 +1,70 @@
+function openPopup() {
+  var popup = document.getElementById('popup');
+  popup.style.display = 'block';
+}
+
+function closePopup() {
+  var popup = document.getElementById('popup');
+  popup.style.display = 'none';
+  document.getElementById('quoteForm').reset();
+  document.getElementById('response-message').style.display = 'none';
+}
+
+function submitForm(event) {
+  event.preventDefault();
+
+  var fullName = document.getElementById("fullName").value;
+  var email = document.getElementById("email").value;
+  var companyName = document.getElementById("companyName").value;
+  var enquiry = document.getElementById("enquiry").value;
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'submit_form.php');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        handleFormSubmissionResponse(xhr.responseText);
+      } else {
+        handleFormSubmissionResponse('error');
+      }
+    }
+  };
+  xhr.send('fullName=' + encodeURIComponent(fullName) +
+    '&email=' + encodeURIComponent(email) +
+    '&companyName=' + encodeURIComponent(companyName) +
+    '&enquiry=' + encodeURIComponent(enquiry));
+
+  closePopup();
+}
+
+function handleFormSubmissionResponse(response) {
+  var responseMessage = document.getElementById('response-message');
+  if (response === 'success') {
+    responseMessage.innerHTML = 'Your request has been submitted successfully. You will hear from us soon.';
+    responseMessage.style.color = 'green';
+  } else {
+    responseMessage.innerHTML = 'Oops! There was an error submitting the form. Please try again.';
+    responseMessage.style.color = 'red';
+  }
+  responseMessage.style.display = 'block';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 window.addEventListener("scroll", function() {
   var header = document.querySelector("header");
   if (window.scrollY === 0) {

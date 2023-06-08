@@ -28,14 +28,38 @@
           <li><a href="#footer">Contact</a></li>
         </ul>
       </nav>
-  
-      <div class="cta-button">
-        <a href="send_quote_email.php?email=user@example.com" class="cta-link">Get A Quote</a>
-      </div>
-      
-      
+
+     <div class="cta-button">
+  <a href="#" class="cta-link" onclick="openPopup()">Get A Quote</a>
+</div>
   </header>
-  
+
+
+<!-- Popup Form -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Request a Quote</h2>
+    <form id="quoteForm" onsubmit="submitForm(event)">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="companyName">Company Name</label>
+      <input type="text" id="companyName" name="companyName" required>
+
+      <label for="enquiry">Enquiry</label>
+      <textarea id="enquiry" name="enquiry" required></textarea>
+
+      <input type="submit" value="Submit">
+    </form>
+    <p id="response-message" style="display: none;"></p>
+  </div>
+</div>
+
+
 
 
   <section id="hero" class="hero">
@@ -183,44 +207,49 @@
   </section>
   
   
-  
 
-  <footer id="footer" class="footer">
+   <footer id="footer" class="footer">
     <div class="container footer-container">
       <div class="footer-logo">
         <img src="images/new loggo 3.png" alt="Your Company Logo">
       </div>
       <div class="address-sections">
         <div class="address">
+          <h4><i class="fas fa-map-marker-alt"></i> Office Contact</h4>
+          <p>Contact: +1 (786) 224-3966</p>
+          <p>Email: info@efficientgsl.com</p>
+          
+          <!--<p>Postal Code</p>-->
+        </div>
+        <div class="address">
           <h4><i class="fas fa-map-marker-alt"></i> Office Address</h4>
-          <p>123 Street, City</p>
-          <p>State, Country</p>
-          <p>Postal Code</p>
+          <p>1500 NW 107th Avenue,</p>
+          <p>Miami FLorida, </p>
+          <p>United States</p>
         </div>
-        <div class="address">
-          <h4><i class="fas fa-map-marker-alt"></i> Warehouse Address</h4>
-          <p>456 Street, City</p>
-          <p>State, Country</p>
-          <p>Postal Code</p>
-        </div>
-        <div class="address">
+        <!--<div class="address">
           <h4><i class="fas fa-map-marker-alt"></i> Support Address</h4>
           <p>789 Street, City</p>
           <p>State, Country</p>
           <p>Postal Code</p>
-        </div>
+        </div>-->
       </div>
       <div class="footer-cta-section">
         <h3>Get Started Today!</h3>
         <p>Experience seamless shipping solutions.</p>
-        <a href="send_quote_email.php?email=user@example.com" class="footer-cta-button">Email Us</a>
+
+        <div class="footer-cta-button">
+          <a href="#" class="cta-link" onclick="openPopup()">Email Us</a>
+        </div>
+
+        </div>
+          <div class="copyright">
+          <p>&copy; 2023 Efficient Global Shipping & Logistics. All rights reserved.</p>
+        </div>
       </div>
-      <div class="copyright">
-        <p>&copy; 2023 Efficient Global Shipping & Logistics. All rights reserved.</p>
-      </div>
-    </div>
   </footer>
   
+   
 
   <script src="script.js"></script>
 </body>
