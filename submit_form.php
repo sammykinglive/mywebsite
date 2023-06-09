@@ -1,7 +1,7 @@
 <?php
 function sendEmail($to, $subject, $message, $headers) {
   $result = mail($to, $subject, $message, $headers);
-  
+
   if ($result) {
     return true; // Email sent successfully
   } else {
@@ -32,4 +32,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 ?>
-

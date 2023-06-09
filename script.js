@@ -10,6 +10,11 @@ function closePopup() {
   document.getElementById('response-message').style.display = 'none';
 }
 
+function closeResponsePopup() {
+  var responsePopup = document.getElementById('response-popup');
+  responsePopup.style.display = 'none';
+}
+
 function submitForm(event) {
   event.preventDefault();
 
@@ -39,15 +44,18 @@ function submitForm(event) {
 }
 
 function handleFormSubmissionResponse(response) {
-  var responseMessage = document.getElementById('response-message');
+  var responsePopup = document.getElementById('response-popup');
+  var responseStatus = document.getElementById('response-status');
+
   if (response === 'success') {
-    responseMessage.innerHTML = 'Your request has been submitted successfully. You will hear from us soon.';
-    responseMessage.style.color = 'green';
+    responseStatus.innerHTML = 'Your request has been submitted successfully. You will hear from us soon.';
+    responseStatus.style.color = 'green';
   } else {
-    responseMessage.innerHTML = 'Oops! There was an error submitting the form. Please try again.';
-    responseMessage.style.color = 'red';
+    responseStatus.innerHTML = 'Oops! There was an error submitting the form. Please try again.';
+    responseStatus.style.color = 'red';
   }
-  responseMessage.style.display = 'block';
+
+  responsePopup.style.display = 'block';
 }
 
 
