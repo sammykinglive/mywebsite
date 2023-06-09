@@ -447,7 +447,12 @@ nav ul li a:hover::before {
     width: 100%;
     left: 0;
     padding: 0 20px;
-    text-align: center;
+    
+  }
+
+  .slide-1-caption{
+    width: 100%;
+    padding: 0 20px;
   }
   
   .slide-caption h1 {
@@ -616,9 +621,6 @@ nav ul li a:hover::before {
 }
 
 
-
-
-
 .additional-info {
   margin-top: 60px;
   display: grid;
@@ -628,23 +630,25 @@ nav ul li a:hover::before {
 
 .additional-info-item {
   text-align: center;
-  animation: bounceIn 2s ease-in-out;
   position: relative;
 }
 
-@keyframes bounceIn {
+.additional-info-item i {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
   0% {
-    transform: scale(0.5);
-    opacity: 0;
+    transform: scale(1);
   }
   50% {
     transform: scale(1.2);
   }
   100% {
     transform: scale(1);
-    opacity: 1;
   }
 }
+
 
 .additional-info-item:hover {
   transform: scale();
@@ -751,6 +755,7 @@ nav ul li a:hover::before {
   
 }
 
+
 .features {
   background-color: #fcf8e9;
   padding: 50px 0;
@@ -768,7 +773,6 @@ nav ul li a:hover::before {
   text-align: center;
   margin: 0 60px;
   max-width: 300px;
-  animation: bounce-in 0.8s ease-out;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -776,6 +780,7 @@ nav ul li a:hover::before {
   font-size: 48px;
   color: #1D7DBE;
   margin-bottom: 20px;
+  animation: wiggle-bounce 2s ease-in-out infinite; /* New animation applied to icons */
 }
 
 .feature h3 {
@@ -784,20 +789,22 @@ nav ul li a:hover::before {
   color: #AF8B09;
 }
 
-
-
 .feature:hover {
   transform: translateY(-10px);
 }
 
-@keyframes bounce-in {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
+@keyframes wiggle-bounce {
+  0%, 100% {
     transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
   }
 }
 
@@ -818,6 +825,7 @@ nav ul li a:hover::before {
     padding: 2px 0;
   }
 }
+
 
 
 
@@ -856,13 +864,26 @@ nav ul li a:hover::before {
 .stat-item:hover::before {
   width: 100%;
 }
-
 .stat-item h3 {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #1D7DBE;
+  animation: pulse 2s ease-in-out infinite;
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 .stat-item span {
   font-size: 16px;
@@ -926,7 +947,7 @@ nav ul li a:hover::before {
   }
 
   .about-inscription {
-    padding: 30px;
+    padding: 10px;
   }
 
   .inscription-content {
