@@ -99,8 +99,41 @@ form input[type="submit"] {
 
 
 
+/* Header Styles */
+header.top-header {
+  background-color: #1D7DBE;
+  color: #7a7878;
+  padding: 10px;
+}
 
+.top-header-container {
+  max-width: 1200px;
+  margin: 5px 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
+.contact-info {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon,
+.email-icon {
+  margin-right: 2px;
+}
+
+.contact-info span{
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .top-header-container {
+    display: none;
+  } 
+}
 
 
 
@@ -109,20 +142,20 @@ form input[type="submit"] {
 /* Header Styles */
 header {
   background-color: #fff;
-  padding: 10px 10px;
+  padding: 5px 10px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 9999;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 5px 20px;
   flex-wrap: wrap;
   max-width: 1200px; /* Adjust the value based on your desired maximum width */
   margin: 0 auto; /* Center the header horizontally */
